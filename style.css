@@ -25,8 +25,8 @@ body {
     white-space: pre-wrap;
   }
   
-  .time-block{
-    text-align: center;
+  .time-slot{
+    text-align: left;
     border-radius: 15px;
   }
   
