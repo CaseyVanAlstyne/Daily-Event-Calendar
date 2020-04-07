@@ -12,15 +12,19 @@ $(document).ready(function () {
         currentDay.text(moment().format('MMMM Do YYYY, h:mm:ss a'))
         console.log(time);
     }
-    setInterval(updateTime, 0);
+    setInterval(updateTime, 60000);
 
     // use for loop to compare time (ha) to the id for the time, which is foun on the HTML document. 
-    for (let i = 0; i < allTimeSlots.length; i++) {
-        console.log(allTimeSlots[i])
-        // compare time with Ids
-        // if (time !== currentDay) {
-        //     allTimeSlots.style.color = "#99badd";
-    }
+    // for (let i = 0; i < allTimeSlots.length; i++) {
+    //     console.log(allTimeSlots[i])
+    //     // compare time with Ids
+    //     console.log(time);
+    //     console.log(currentDay);
+    //     if (time !== currentDay) {
+    //         $("allTimeSlots").addClass("past");
+    // add class .past to allTimeSlots using jQuery
+    // });
+    // }
 
     //     function checkTimes() {
     //         let currentTime = moment().hour();
