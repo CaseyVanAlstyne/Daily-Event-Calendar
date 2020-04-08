@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     // display the current date and time in the currentDay Id on the HTML document
     function updateTime() {
-        currentDay.text(moment().format('dddd, MMMM Do YYYY'))
+        currentDay.text(moment().format('dddd, MMMM Do YYYY, H'))
         console.log(time);
     }
     setInterval(updateTime, 1000);
@@ -27,6 +27,7 @@ $(document).ready(function () {
         } else {
             $(allTimeSlots[i]).addClass("future");
         }
+        // do I need to use less than and/or greater than for the past/future?
     }
 
     // start localstorage here---Need a setItem
