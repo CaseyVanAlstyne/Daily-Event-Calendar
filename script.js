@@ -29,6 +29,8 @@ $(document).ready(function () {
         }
     }
 
+    // start localstorage here---Need a setItem
+
     // function updateContent() {
     //     "9".innerHTML = localStorage.getItem("nine");
     //     "10".innerHTML = localStorage.getItem("ten");
@@ -40,5 +42,7 @@ $(document).ready(function () {
     //     "4".innerHTML = localStorage.getItem("four");
     //     "5".innerHTML = localStorage.getItem("five");
     //     }
+
+    // Need a save button
 
 });
