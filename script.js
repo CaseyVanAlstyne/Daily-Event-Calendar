@@ -2,24 +2,24 @@ $(document).ready(function () {
 
     var currentDay = $("#currentDay");
     var userInput = $("#user-input");
-    var time = moment().format('h');
+    var time = moment().format('H');
     // var m = moment().format('MMMM Do YYYY');
     var allTimeSlots = $(".content");
     console.log(allTimeSlots);
 
     // display the current date and time in the currentDay Id on the HTML document
     function updateTime() {
-        currentDay.text(moment().format('h'))
+        currentDay.text(moment().format('dddd, MMMM Do YYYY'))
         console.log(time);
     }
-    setInterval(updateTime, 60000);
+    setInterval(updateTime, 1000);
 
     // use for loop to compare time (ha) to the id for the time, which is foun on the HTML document. 
     for (let i = 0; i < allTimeSlots.length; i++) {
         console.log(allTimeSlots[i])
-        // compare time with Ids
         console.log(time);
         console.log(currentDay);
+        // add class to each of the textarea elements for allTimeSlots
         if (time !== currentDay) {
             $(allTimeSlots[i]).addClass("past");
         } else if (time === currentDay) {
