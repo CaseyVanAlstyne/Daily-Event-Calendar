@@ -15,43 +15,20 @@ $(document).ready(function () {
 
     // use for loop to compare time (H) to currentDay-----------------------------------------------------------------------------------------------
 
-    // for (let i = 0; i < allTimeSlots.length; i++) {
-    //     // console.log(allTimeSlots[i])
-    //     // console.log(time);
-    //     // console.log(currentDay);
-
-    //     // add class to each of the textarea elements for allTimeSlots------------------------------------------------------------------------------
-    //     if (time >= 8 && time < 9) {
-    //         $(allTimeSlots[i]).addClass("present");
-    //     }
-
-    //     if (time !== 8) {
-    //         $(allTimeSlots[i]).addClass("past");
-    //     } else if (time === currentDay) {
-    //         $(allTimeSlots[i]).addClass("present");
-    //     } else {
-    //         $(allTimeSlots[i]).addClass("future");
-    //     }
-    // do I need to use less than and / or greater than for the past / future ?
-    // }
-
     allTimeSlots.each(function () {
         console.log($(this).attr("id"));
         var loopId = $(this).attr("id")
-        var parsedLoop = parseInt(loopID);
-        console.log(typeof parsedLoop);
-        console.log(typeof loopId);
-        console.log(typeof time);
-        if (time < loopId) {
-            $(this).addClass("past");
-        } else if (time > loopId) {
+        var parsedTime = parseInt(time);
+        var parsedLoop = parseInt(loopId);
+        console.log({ time, loopId, parsedLoop });
+        if (parsedTime < parsedLoop) {
             $(this).addClass("future");
+        } else if (parsedTime > parsedLoop) {
+            $(this).addClass("past");
         } else {
             $(this).addClass("present");
         }
     });
-
-
 
     // start localstorage here---Need a setItem---------------------------------------------------------------------------------------------------------
 
