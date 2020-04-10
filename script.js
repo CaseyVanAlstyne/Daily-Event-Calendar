@@ -13,7 +13,7 @@ $(document).ready(function () {
     }
     setInterval(updateTime, 1000);
 
-    // use for loop to compare time (H) to currentDay-----------------------------------------------------------------------------------------------
+    // use function to compare parsedTime to parsedLoop-----------------------------------------------------------------------------------------------
 
     allTimeSlots.each(function () {
         console.log($(this).attr("id"));
@@ -30,21 +30,27 @@ $(document).ready(function () {
         }
     });
 
-    // start localstorage here---Need a setItem---------------------------------------------------------------------------------------------------------
+    // localstorage-- setItem ---------------------------------------------------------------------------------------------------------
 
-    // function updateContent() {
-    //     "8".innerHTML = localStorage.getItem("eight");
-    //     "9".innerHTML = localStorage.getItem("nine");
-    //     "10".innerHTML = localStorage.getItem("ten");
-    //     "11".innerHTML = localStorage.getItem("eleven");
-    //     "12".innerHTML = localStorage.getItem("twelve");
-    //     "13".innerHTML = localStorage.getItem("thirteen");
-    //     "14".innerHTML = localStorage.getItem("fourteen");
-    //     "15".innerHTML = localStorage.getItem("fifteen");
-    //     "16".innerHTML = localStorage.getItem("sixteen");
-    //     "17".innerHTML = localStorage.getItem("seventeen");
-    //     }
+    localStorage.setItem("eight", "value");
 
-    // Need a save button------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // localStorage getItem ---------------------------------------------------------------------------------------------------------
+
+    function updateContent() {
+        "8".innerHTML = localStorage.getItem("eight");
+        "9".innerHTML = localStorage.getItem("nine");
+        "10".innerHTML = localStorage.getItem("ten");
+        "11".innerHTML = localStorage.getItem("eleven");
+        "12".innerHTML = localStorage.getItem("twelve");
+        "13".innerHTML = localStorage.getItem("thirteen");
+        "14".innerHTML = localStorage.getItem("fourteen");
+        "15".innerHTML = localStorage.getItem("fifteen");
+        "16".innerHTML = localStorage.getItem("sixteen");
+        "17".innerHTML = localStorage.getItem("seventeen");
+    }
+
+    // clear localStorage---------------------------------------------------------------------------------------------------------
+
+    localStorage.clear();
 
 });
