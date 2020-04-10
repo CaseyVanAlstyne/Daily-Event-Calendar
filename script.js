@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
     var currentDay = $("#currentDay");
-    var userInput = $("#user-input");
     var time = moment().format('H');
     var allTimeSlots = $(".content");
+    var saveBtn = document.getElementById('saveBtn');
+    var clearBtn = document.getElementById('clearBtn');
     console.log(allTimeSlots);
 
     // display the current date and time in the currentDay Id on the HTML document------------------------------------------------------------------
@@ -31,8 +32,13 @@ $(document).ready(function () {
     });
 
     // localstorage-- setItem ---------------------------------------------------------------------------------------------------------
+    allTimeSlots.addEventListener('input', writeLocalStorage);
 
-    localStorage.setItem("eight", "value");
+    function writeLocalStorage() {
+        if (typeof (Storage) !== "undefined") {
+            localStorage.setItem("text", allTimeSlots.value);
+        }
+    }
 
     // localStorage getItem ---------------------------------------------------------------------------------------------------------
 
