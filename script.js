@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
     var currentDay = $("#currentDay");
-    var time = moment().format('H');
+    var time = moment().format("H");
     var allTimeSlots = $(".content");
-    var saveBtn = document.getElementById('saveBtn');
-    var clearBtn = document.getElementById('clearBtn');
-    console.log(allTimeSlots);
+    var saveBtn = $("#saveBtn");
+    var clearBtn = $("#clearBtn");
+    // console.log(allTimeSlots);
 
     // display the current date and time in the currentDay Id on the HTML document------------------------------------------------------------------
     function updateTime() {
@@ -17,11 +17,11 @@ $(document).ready(function () {
     // use function to compare parsedTime to parsedLoop-----------------------------------------------------------------------------------------------
 
     allTimeSlots.each(function () {
-        console.log($(this).attr("id"));
+        // console.log($(this).attr("id"));
         var loopId = $(this).attr("id")
         var parsedTime = parseInt(time);
         var parsedLoop = parseInt(loopId);
-        console.log({ time, loopId, parsedLoop });
+        // console.log({ time, loopId, parsedLoop });
         if (parsedTime < parsedLoop) {
             $(this).addClass("future");
         } else if (parsedTime > parsedLoop) {
@@ -32,31 +32,41 @@ $(document).ready(function () {
     });
 
     // localstorage-- setItem ---------------------------------------------------------------------------------------------------------
-    allTimeSlots.addEventListener('input', writeLocalStorage);
+    saveBtn.on('click', writeLocalStorage);
+
+
 
     function writeLocalStorage() {
-        if (typeof (Storage) !== "undefined") {
-            localStorage.setItem("text", allTimeSlots.value);
-        }
+        allTimeSlots.each(function () {
+            // console.log(this);
+            console.log($(this).val(), $(this).attr("id"));
+            // $(this).val();
+            // if (typeof (Storage) !== "undefined") {
+            localStorage.setItem($(this).attr("id"), $(this).val());
+            // console.log("here here");
+        });
     }
+
 
     // localStorage getItem ---------------------------------------------------------------------------------------------------------
 
     function updateContent() {
-        "8".innerHTML = localStorage.getItem("eight");
-        "9".innerHTML = localStorage.getItem("nine");
-        "10".innerHTML = localStorage.getItem("ten");
-        "11".innerHTML = localStorage.getItem("eleven");
-        "12".innerHTML = localStorage.getItem("twelve");
-        "13".innerHTML = localStorage.getItem("thirteen");
-        "14".innerHTML = localStorage.getItem("fourteen");
-        "15".innerHTML = localStorage.getItem("fifteen");
-        "16".innerHTML = localStorage.getItem("sixteen");
-        "17".innerHTML = localStorage.getItem("seventeen");
+        $("#8").val(localStorage.getItem("8"));
+        // "9".innerHTML = localStorage.getItem("9");
+        // "10".innerHTML = localStorage.getItem("ten");
+        // "11".innerHTML = localStorage.getItem("eleven");
+        // "12".innerHTML = localStorage.getItem("twelve");
+        // "13".innerHTML = localStorage.getItem("thirteen");
+        // "14".innerHTML = localStorage.getItem("fourteen");
+        // "15".innerHTML = localStorage.getItem("fifteen");
+        // "16".innerHTML = localStorage.getItem("sixteen");
+        // "17".innerHTML = localStorage.getItem("seventeen");
     }
 
     // clear localStorage---------------------------------------------------------------------------------------------------------
 
     localStorage.clear();
+    clearBtn.on('click', writeLocalStorage);
 
+    updateContent();
 });
