@@ -46,6 +46,7 @@ $(document).ready(function () {
   $("#hour-15 .description").val(localStorage.getItem("hour-15"));
   $("#hour-16 .description").val(localStorage.getItem("hour-16"));
   $("#hour-17 .description").val(localStorage.getItem("hour-17"));
+  // need to add future hours past 5pm
 
   // display current day on page
   $("#currentDay").text(moment().format("dddd, MMMM Do"));
