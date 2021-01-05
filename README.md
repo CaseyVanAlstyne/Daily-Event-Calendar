@@ -4,8 +4,18 @@ For this project, I created a simple calendar application that allows the user t
 
 I also took advantage of the [Moment.js] library to work with date and time. There is a heavy focus on using Moment.js in the browser.
 
-The user can enter in information for any time slot. This information can be saved and/or deleted by selecting the save or clear button at the top of the page. 
+The user can enter in information for any time slot. This information can be saved and/or deleted by selecting the save or clear button at the top of the page.
 
-The daily event scheduler is color coded based on the user's current time. This dynamic feature helps the user keep track of whether or not they have accomplished their goals for the day. 
+The daily event scheduler is color coded based on the user's current time. This dynamic feature helps the user keep track of whether or not they have accomplished their goals for the day.
 
-Please let me know if you have any questions regarding the functionality of this application. 
+Might add some functionality with the following libraries in the future:
+
+- [Luxon](https://moment.github.io/luxon/)
+
+  - [Day.js](https://day.js.org/)
+
+  - [date-fns](https://date-fns.org/)
+
+  - [js-Joda](https://js-joda.github.io/js-joda/)
+
+Please let me know if you have any questions regarding the functionality of this application.
